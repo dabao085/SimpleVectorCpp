@@ -48,5 +48,34 @@ int main()
     ivec1.pop_back();
     printElement<int>(ivec1);
 
+    cout << "--------------" << endl;
+    ivec.assign(ivec1.begin(), ivec1.end());
+    printElement<int>(ivec);
+    ivec1.assign(3, 1);
+    printElement<int>(ivec1);
+    ivec1.assign({1,3,2});
+    printElement<int>(ivec1);
+
+    ivec1.insert(ivec1.end(), 4);
+    printElement<int>(ivec1);
+    ivec1.insert(ivec1.begin(), 0);
+    printElement<int>(ivec1);
+
+    ivec1.clear();
+    printElement<int>(ivec1);
+
+    cout << "-------------" << endl;
+    Vector<int> ivec2{1,2,3,4,5};
+    ivec2.erase(ivec2.begin());
+    printElement<int>(ivec2);
+    cout << "-------------" << endl;
+    ivec2.erase(ivec2.end());
+    printElement<int>(ivec2);  
+    cout << "-------------" << endl;
+    ivec2.erase(ivec2.begin() + 1, ivec2.end());
+    printElement<int>(ivec2);
+    ivec2.erase(ivec2.begin());
+    printElement<int>(ivec2);
+
     return 0;
 }
